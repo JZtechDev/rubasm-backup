@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pretty_animated_text/pretty_animated_text.dart';
 import 'package:ruba_sm/core/widgets/custom_texts.dart';
@@ -136,6 +137,10 @@ class OnboardingScreen extends StatelessWidget {
                         backgroundColor: Colors.black,
                         textColor: Colors.white,
                         text: 'Get Started',
+                        icon: SvgPicture.asset(
+                          'assets/images/Arrow 2.svg',
+                          width: 15,
+                        ),
                         onPressed: () {
                           _handleNavigation(context, true, state);
                         },
@@ -151,6 +156,10 @@ class OnboardingScreen extends StatelessWidget {
                         minSize: const Size(double.infinity, 51),
                         backgroundColor: Colors.black,
                         textColor: Colors.white,
+                        icon: SvgPicture.asset(
+                          'assets/images/Arrow 2.svg',
+                          width: 15,
+                        ),
                         text: 'Sign In',
                         onPressed: () {
                           _handleNavigation(context, true, state);

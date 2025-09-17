@@ -41,15 +41,8 @@ class CustomIconButtonNew extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
+    return ElevatedButton(
       onPressed: isEnabled! ? onPressed : null,
-      icon: icon,
-      label: CustomText(
-        title: text,
-        fontSize: fontSize,
-        color: textColor,
-        fontWeight: fontWeight,
-      ),
       style: ElevatedButton.styleFrom(
         minimumSize: minSize,
         maximumSize: maxSize,
@@ -64,6 +57,18 @@ class CustomIconButtonNew extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           side: BorderSide(color: borderColor, width: borderWidth),
         ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CustomTextIBM(
+            title: text,
+            fontSize: fontSize,
+            color: textColor,
+            fontWeight: fontWeight,
+          ),
+          if (icon != null) ...[const SizedBox(width: 8), icon!],
+        ],
       ),
     );
   }
